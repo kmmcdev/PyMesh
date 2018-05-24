@@ -20,7 +20,7 @@ def laplacian_smooth(mesh, scale=0.15, repeat=1, preserve_limits="False"):
                                       np.asarray(np.where(mesh.vertices[:, 1] >= np.amax(mesh.vertices[:, 1]))),
                                       np.asarray(np.where(mesh.vertices[:, 2] <= np.amin(mesh.vertices[:, 2]))),
                                       np.asarray(np.where(mesh.vertices[:, 2] >= np.amax(mesh.vertices[:, 2])))),
-                                    axis=1).T
+                                     axis=1).T
             displace[nullpts,:]=0
         mesh = pymesh.form_mesh(mesh.vertices + displace, mesh.faces)
         n = n + 1
